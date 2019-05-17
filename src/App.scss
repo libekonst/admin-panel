@@ -1,34 +1,32 @@
 @import 'variables';
 
-/* PANEL */
 .panel {
-  /* Styles */
+  // Styles
   width: 100vw;
   height: 100vh;
   background-color: white;
   margin: auto;
 
-  /* Flex */
+  // Flex
   display: flex;
-}
 
-@media screen and (min-width: $bp-desktop) {
-  .panel {
+  // Fullscreen on mobile, smaller on desktop.
+  @media (min-width: $bp-desktop) {
     width: 80vw;
     height: 60vh;
     box-shadow: 0 0 5px 1px lightgray;
   }
 
-  .panel__squeezeable-section {
+  &__section {
     flex: 1;
+    overflow: auto;
   }
-}
 
-.panel__section {
-  flex: 1;
-  overflow: auto;
-}
-
-.panel__squeezeable-section {
-  overflow: auto;
+  &__squeezeable-section {
+    overflow: auto;
+    // Take up min space on mobile and grow on desktop
+    @media (min-width: $bp-desktop) {
+      flex: 1;
+    }
+  }
 }

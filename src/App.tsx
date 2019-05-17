@@ -17,7 +17,10 @@ const View: React.FC = () => {
           {Array(20)
             .fill(0)
             .map((el, i) => (
-              <li key={i} className="list-tile">
+              <li
+                key={i}
+                className={`list-tile list-tile--${i === 1 ? 'selected' : 'with-hover'}`}
+              >
                 <div className="list-tile__avatar">hello</div>
                 <div className="list-tile__details">{i}</div>
               </li>

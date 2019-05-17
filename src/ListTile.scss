@@ -9,43 +9,50 @@
 
   /* Highlight on hover */
   &::before {
-    /* Positioning */
+    // Positioning
     content: '';
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-
-    /* Styles */
-    background-color: #e8e8e8;
-    opacity: 0;
     z-index: -1;
-    visibility: hidden;
-    transition: all 0.1s linear;
   }
-}
 
-.list-tile:hover::before {
-  opacity: 1;
-  visibility: visible;
-}
+  &--with-hover {
+    &::before {
+      // Styles
+      background-color: #e8e8e8;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.1s linear;
+    }
 
-.list-tile__avatar {
-  width: 7rem;
-  height: 7rem;
-  background-color: lightpink;
-}
+    &:hover::before {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
 
-.list-tile__details {
-  flex: 1;
-  display: none;
-  background-color: lightgreen;
-}
+  &--selected {
+    // &::before {
+    background-color: #1b68b3;
+    // }
+  }
 
-/* Show element on desktop */
-@media (min-width: $bp-desktop) {
-  .list-tile__details {
-    display: block;
+  // Avatar el
+  &__avatar {
+    width: 7rem;
+  }
+
+  // Details el
+  &__details {
+    flex: 1;
+    display: none;
+
+    // Show element only on desktop
+    @media (min-width: $bp-desktop) {
+      display: block;
+    }
   }
 }
