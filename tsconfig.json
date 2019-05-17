@@ -23,7 +23,7 @@
         "name": "typescript-tslint-plugin",
         "configFile": "./tslint.json"
       }
-    ],
+    ]
   },
   "include": [
     "src"
