@@ -7,9 +7,9 @@
   cursor: pointer;
   z-index: 1;
 
-  /* Highlight on hover */
+  /* Pseudo-element for highlighting */
   &::before {
-    // Positioning
+    // Position
     content: '';
     position: absolute;
     top: 0;
@@ -17,27 +17,29 @@
     bottom: 0;
     left: 0;
     z-index: -1;
+
+    // Styles
+    background-color: $user-hovered-bg;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.1s linear;
   }
 
+  // Modifier to show the highlight pseudo-el.
   &--with-hover {
-    &::before {
-      // Styles
-      background-color: $user-hovered-bg;
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.1s linear;
-    }
-
     &:hover::before {
       opacity: 1;
       visibility: visible;
     }
   }
 
+  // Modifier to change pseudo's color and show it steadily when selected.
   &--selected {
-    // &::before {
-    background-color: $user-selected-bg;
-    // }
+    &::before {
+      background-color: $user-selected-bg;
+      opacity: 1;
+      visibility: visible;
+    }
   }
 
   // Avatar el

@@ -3,13 +3,24 @@ import './App.scss';
 import './normalize.css';
 import './ListTile.scss';
 
-const App: React.FC = () => {
-  return <View />;
-};
+class App extends React.Component {
+  state = {
+    selected: undefined,
+  };
+  handleSelectUser = (id: number) => () => this.setState({ selected: id });
+  render() {
+    return <View onSelectUser={this.handleSelectUser} selected={this.state.selected} />;
+  }
+}
 
 export default App;
 
-const View: React.FC = () => {
+interface IProps {
+  onSelectUser: (id: number) => () => void;
+  selected?: number;
+}
+const View: React.FC<IProps> = props => {
+  const { onSelectUser, selected } = props;
   return (
     <article className="panel">
       <section className="panel__squeezeable-section">
@@ -19,7 +30,8 @@ const View: React.FC = () => {
             .map((el, i) => (
               <li
                 key={i}
-                className={`list-tile list-tile--${i === 1 ? 'selected' : 'with-hover'}`}
+                className={`list-tile list-tile--${selected === i ? 'selected' : 'with-hover'}`}
+                onClick={onSelectUser(i)}
               >
                 <div className="list-tile__avatar">hello</div>
                 <div className="list-tile__details">{i}</div>
