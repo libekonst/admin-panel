@@ -1,7 +1,7 @@
 @import 'variables';
 
 .list-tile {
-  height: 6rem;
+  height: $list-tile-height;
   display: flex;
   position: relative;
   cursor: pointer;
@@ -22,7 +22,7 @@
   &--with-hover {
     &::before {
       // Styles
-      background-color: #e8e8e8;
+      background-color: $user-hovered-bg;
       opacity: 0;
       visibility: hidden;
       transition: all 0.1s linear;
@@ -36,13 +36,13 @@
 
   &--selected {
     // &::before {
-    background-color: #1b68b3;
+    background-color: $user-selected-bg;
     // }
   }
 
   // Avatar el
   &__avatar {
-    width: 7rem;
+    width: $avatar-width;
   }
 
   // Details el
