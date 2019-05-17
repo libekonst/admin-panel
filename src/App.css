@@ -1,43 +1,32 @@
+/* PANEL */
 .panel {
+  /* Styles */
   width: 100vw;
   height: 100vh;
   background-color: white;
   margin: auto;
 
-  /* Grid */
-  display: grid;
-  grid-template-columns: 7rem auto;
+  /* Flex */
+  display: flex;
 }
+
 @media screen and (min-width: 768px) {
   .panel {
     width: 80vw;
     height: 60vh;
-    box-shadow: 0 0 5px 0 lightgray;
-
-    /* Grid */
-    grid-template-columns: 1fr 1fr;
+    box-shadow: 0 0 5px 1px lightgray;
   }
 
-  .list-item {
-    grid-template-columns: 7rem 0;
+  .panel__squeezeable-section {
+    flex: 1;
   }
 }
 
-.panel__left {
+.panel__section {
+  flex: 1;
   overflow: auto;
 }
 
-.panel__right {
-  background-color: lightcoral;
+.panel__squeezeable-section {
   overflow: auto;
-}
-
-.list-item {
-  height: 6rem;
-  display: grid;
-  grid-template-columns: 7rem auto;
-}
-
-.list-item:hover {
-  background-color: #e8e8e8;
 }

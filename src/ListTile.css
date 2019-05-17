@@ -1,0 +1,49 @@
+.list-tile {
+  height: 6rem;
+  display: flex;
+  position: relative;
+  cursor: pointer;
+  z-index: 1;
+}
+
+/* Highlight on hover */
+.list-tile::before {
+  /* Positioning */
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  /* Styles */
+  background-color: #e8e8e8;
+  opacity: 0;
+  z-index: -1;
+  visibility: hidden;
+  transition: all 0.1s linear;
+}
+
+.list-tile:hover::before {
+  opacity: 1;
+  visibility: visible;
+}
+
+.list-tile__avatar {
+  width: 7rem;
+  height: 7rem;
+  background-color: lightpink;
+}
+
+.list-tile__details {
+  flex: 1;
+  display: none;
+  background-color: lightgreen;
+}
+
+/* Show element on desktop */
+@media screen and (min-width: 768px) {
+  .list-tile__details {
+    display: block;
+  }
+}

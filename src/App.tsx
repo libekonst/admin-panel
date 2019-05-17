@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import './normalize.css';
+import './ListTile.css';
 
 const App: React.FC = () => {
   return <View />;
@@ -11,18 +12,19 @@ export default App;
 const View: React.FC = () => {
   return (
     <article className="panel">
-      <section className="panel__left">
+      <section className="panel__squeezeable-section">
         <ul>
           {Array(20)
             .fill(0)
             .map((el, i) => (
-              <li key={i} className="list-item">
-                hello {i}
+              <li key={i} className="list-tile">
+                <div className="list-tile__avatar">hello</div>
+                <div className="list-tile__details">{i}</div>
               </li>
             ))}
         </ul>
       </section>
-      <section className="panel__right">hello from right</section>
+      <section className="panel__section">hello from right</section>
     </article>
   );
 };
