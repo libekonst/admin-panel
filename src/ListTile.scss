@@ -1,27 +1,29 @@
+@import 'variables';
+
 .list-tile {
   height: 6rem;
   display: flex;
   position: relative;
   cursor: pointer;
   z-index: 1;
-}
 
-/* Highlight on hover */
-.list-tile::before {
-  /* Positioning */
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  /* Highlight on hover */
+  &::before {
+    /* Positioning */
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
 
-  /* Styles */
-  background-color: #e8e8e8;
-  opacity: 0;
-  z-index: -1;
-  visibility: hidden;
-  transition: all 0.1s linear;
+    /* Styles */
+    background-color: #e8e8e8;
+    opacity: 0;
+    z-index: -1;
+    visibility: hidden;
+    transition: all 0.1s linear;
+  }
 }
 
 .list-tile:hover::before {
@@ -42,7 +44,7 @@
 }
 
 /* Show element on desktop */
-@media screen and (min-width: 768px) {
+@media (min-width: $bp-desktop) {
   .list-tile__details {
     display: block;
   }

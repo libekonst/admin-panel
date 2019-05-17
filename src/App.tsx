@@ -1,7 +1,7 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import './normalize.css';
-import './ListTile.css';
+import './ListTile.scss';
 
 const App: React.FC = () => {
   return <View />;

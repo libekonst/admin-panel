@@ -1,3 +1,5 @@
+@import 'variables';
+
 /* PANEL */
 .panel {
   /* Styles */
@@ -10,7 +12,7 @@
   display: flex;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: $bp-desktop) {
   .panel {
     width: 80vw;
     height: 60vh;
