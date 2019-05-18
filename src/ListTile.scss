@@ -1,11 +1,11 @@
 @import 'variables';
 
 .list-tile {
-  height: $list-tile-height;
   display: flex;
   position: relative;
   cursor: pointer;
   z-index: 1;
+  padding: 0.5rem 1rem;
 
   /* Pseudo-element for highlighting */
   &::before {
@@ -45,6 +45,24 @@
   // Avatar el
   &__avatar {
     width: $avatar-width;
+    min-width: $avatar-width;
+    height: $avatar-height;
+    min-height: $avatar-height;
+    display: flex;
+    display: inline-block;
+    // background-size: cover;
+    // overflow: hidden;
+
+    &__image {
+      // background-size: cover;
+      // background-repeat: no-repeat;
+      // background-position: center;
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      max-width: 100%;
+      max-height: 100%;
+    }
   }
 
   // Details el
