@@ -24,7 +24,10 @@
   }
 
   &__squeezeable-section {
-    overflow: auto;
+    // This always shows a scrollbar, even if not overflowing.
+    // Shoulde use 'auto', but it causes mozilla to push content. Chrome is fine with both.
+    // Maybe use ref to dynamically add overflow-y: scroll.
+    overflow-y: scroll;
     // Take up min space on mobile and grow on desktop
     @media (min-width: $bp-desktop) {
       flex: 1;
