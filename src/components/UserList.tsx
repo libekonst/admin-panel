@@ -38,7 +38,22 @@ export const UserList: React.FC<IProps> = props => {
               alt={`${user.name}'s avatar`}
             />
           </div>
-          <div className="list-tile__details">{user.name}</div>
+          <div className="list-tile__details">
+            <p
+              className={`list-tile__details__name ${selected === user.id &&
+                'list-tile__details__name--selected'}`}
+            >
+              {user.name}
+            </p>
+            {user.email && (
+              <p
+                className={`list-tile__details__email ${selected === user.id &&
+                  'list-tile__details__email--selected'}`}
+              >
+                {user.email}
+              </p>
+            )}
+          </div>
         </li>
       ))}
     </ul>

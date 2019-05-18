@@ -62,10 +62,35 @@
   &__details {
     flex: 1;
     display: none;
+    // Styles
+    margin-left: $list-tile-padding-x;
 
     // Show element only on desktop
     @media (min-width: $bp-desktop) {
-      display: block;
+      // Flex position
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    &__name {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+
+      &--selected {
+        color: white;
+      }
+    }
+
+    &__email {
+      font-size: 0.9rem;
+      color: darken(white, 40%);
+
+      &--selected {
+        color: darken(white, 20%);
+      }
     }
   }
 }
