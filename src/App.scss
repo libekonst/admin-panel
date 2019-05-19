@@ -13,8 +13,8 @@
   // Fullscreen on mobile, smaller on desktop. Width can be reduced up to the breakpoint's size.
   @media (min-width: $bp-desktop) {
     min-width: $bp-desktop;
-    width: 60vw;
-    height: 60vh;
+    width: 55vw;
+    height: 55vh;
     box-shadow: 0 0 5px 1px lightgray;
   }
 
