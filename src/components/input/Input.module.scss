@@ -7,12 +7,12 @@
   border-color: $input-border;
   margin: 0.5rem 0 1rem;
   padding: 0.5rem;
-  outline: 0 solid lighten($primary, 50%);
+  outline: none;
   transition: all 0.1s ease-out;
 
   &:focus {
     border-color: $primary;
-    outline: 0.2rem solid lighten($primary, 50%);
+    box-shadow: 0 0 0 0.2rem lighten($primary, 50%);
   }
 }
 
