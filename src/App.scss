@@ -18,9 +18,10 @@
     box-shadow: 0 0 5px 1px lightgray;
   }
 
-  &__section {
+  &__form-section {
     flex: 1;
     overflow: auto;
+    padding: 2rem;
   }
 
   &__squeezeable-section {

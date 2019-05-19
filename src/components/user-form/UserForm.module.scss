@@ -1,0 +1,46 @@
+@import '../../variables';
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 2rem;
+}
+
+@mixin button {
+  padding: 0.5rem 0.75rem;
+  border: 0;
+  margin: 0;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.1s ease-out;
+}
+
+.cancel {
+  @include button;
+
+  background-color: $cancel-btn-bg;
+
+  &:hover {
+    background-color: darken($cancel-btn-bg, 5%);
+  }
+
+  &:active {
+    background-color: darken($cancel-btn-bg, 10%);
+  }
+}
+
+.save {
+  @include button;
+
+  color: white;
+  background-color: $primary;
+  margin-left: 0.2rem;
+
+  &:hover {
+    background-color: lighten($primary, 5%);
+  }
+
+  &:active {
+    background-color: darken($primary, 5%);
+  }
+}
