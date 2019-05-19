@@ -3,10 +3,11 @@
 .input {
   display: inline-block;
   width: 100%;
-  border: 1px solid;
+  border: 0.05rem solid;
   border-color: $input-border;
   margin: 0.5rem 0 1rem;
-  padding: 0.5rem;
+  padding: 0 0.8rem;
+  height: 2.2rem; // Use height instead of y-axis padding to prevent chrome from cutting letters.
   outline: none;
   transition: all 0.1s ease-out;
 
