@@ -3,6 +3,7 @@ import './App.scss';
 import './normalize.css';
 import { USERS } from './user_data';
 import { UserList } from './components/UserList';
+import { UserForm } from './components/UserForm';
 
 interface IState {
   selected?: string;
@@ -24,13 +25,13 @@ interface IProps {
   selected?: string;
 }
 const View: React.FC<IProps> = props => {
-  const { onSelectUser, selected } = props;
+  // const { onSelectUser, selected } = props;
   return (
     <article className="panel">
       <section className="panel__squeezeable-section">
         <UserList users={USERS} {...props} />
       </section>
-      <section className="panel__section">{selected}</section>
+      <section className="panel__section">{<UserForm />}</section>
     </article>
   );
 };
