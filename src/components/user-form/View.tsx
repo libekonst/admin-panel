@@ -8,6 +8,7 @@ interface IProps {
   onChange: (name: keyof IUSerInputs) => (e: any) => void;
   hasChanged: boolean;
   onCancel: () => void;
+  onSave: (e: any) => void;
 }
 export const View: React.FC<IProps> = props => {
   const {
@@ -15,6 +16,7 @@ export const View: React.FC<IProps> = props => {
     onChange,
     hasChanged,
     onCancel,
+    onSave,
   } = props;
   return (
     <form>
@@ -64,7 +66,13 @@ export const View: React.FC<IProps> = props => {
         {hasChanged && (
           <input className={s.cancel} type="reset" value="Cancel" onClick={onCancel} />
         )}
-        <input className={s.save} type="submit" value="Save" disabled={!hasChanged} />
+        <input
+          className={s.save}
+          type="submit"
+          value="Save"
+          onClick={onSave}
+          disabled={!hasChanged}
+        />
       </div>
     </form>
   );

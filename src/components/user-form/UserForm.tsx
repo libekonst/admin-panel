@@ -5,6 +5,7 @@ import { View } from './View';
 
 interface IProps {
   inputs: IUSerInputs;
+  onSave: (newData: IUSerInputs) => void;
 }
 
 interface IState {
@@ -13,6 +14,7 @@ interface IState {
 }
 
 export class UserForm extends React.Component<IProps, IState> {
+  // Stores a snapshot of the currently saved data received from props to use on cancel.
   initialInputs: IUSerInputs = this.props.inputs;
 
   state: IState = {
@@ -32,6 +34,12 @@ export class UserForm extends React.Component<IProps, IState> {
 
   handleCancel = () => this.setState({ hasChanged: false, inputs: this.initialInputs });
 
+  handleSave = (e: any) => {
+    e.preventDefault();
+    this.props.onSave(this.state.inputs);
+    this.setState({ hasChanged: false });
+  };
+
   componentDidUpdate(prevProps: IProps) {
     if (this.props.inputs != prevProps.inputs) {
       this.initialInputs = this.props.inputs;
@@ -46,6 +54,7 @@ export class UserForm extends React.Component<IProps, IState> {
         onChange={this.handleChange}
         hasChanged={this.state.hasChanged}
         onCancel={this.handleCancel}
+        onSave={this.handleSave}
       />
     );
   }
