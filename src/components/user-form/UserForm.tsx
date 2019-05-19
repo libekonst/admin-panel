@@ -1,6 +1,5 @@
 import React from 'react';
 import { IUSerInputs } from '../../interfaces/IUserInputs';
-import { IUser } from '../../interfaces/IUser';
 import { View } from './View';
 
 interface IProps {
@@ -28,16 +27,21 @@ export class UserForm extends React.Component<IProps, IState> {
     if (!this.state.hasChanged) this.setState({ hasChanged: true });
 
     this.setState(prev => ({
-      inputs: { ...prev.inputs, [name]: e.target.value },
+      inputs: { ...prev.inputs, [name]: e.target.value || '' },
     }));
   };
 
-  handleCancel = () => this.setState({ hasChanged: false, inputs: this.initialInputs });
-
-  handleSave = (e: any) => {
+  handleCancel = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    this.props.onSave(this.state.inputs);
-    this.setState({ hasChanged: false });
+    this.setState({ hasChanged: false, inputs: this.initialInputs });
+  };
+
+  handleSave = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (e.currentTarget.checkValidity()) {
+      this.props.onSave(this.state.inputs);
+      this.setState({ hasChanged: false });
+    }
   };
 
   componentDidUpdate(prevProps: IProps) {

@@ -7,8 +7,8 @@ interface IProps {
   user: IUSerInputs;
   onChange: (name: keyof IUSerInputs) => (e: any) => void;
   hasChanged: boolean;
-  onCancel: () => void;
-  onSave: (e: any) => void;
+  onCancel: (e: React.FormEvent<HTMLFormElement>) => void;
+  onSave: (e: React.FormEvent<HTMLFormElement>) => void;
 }
 export const View: React.FC<IProps> = props => {
   const {
@@ -19,13 +19,15 @@ export const View: React.FC<IProps> = props => {
     onSave,
   } = props;
   return (
-    <form>
+    <form onSubmit={onSave} onReset={onCancel}>
       <Input
         label="Name"
         type="text"
         name="name"
         placeholder="Enter name"
         value={name}
+        required
+        maxLength={255}
         onChange={onChange('name')}
       />
       <Input
@@ -34,6 +36,7 @@ export const View: React.FC<IProps> = props => {
         name="email"
         placeholder="Enter email"
         value={email}
+        maxLength={255}
         onChange={onChange('email')}
       />
       <Input
@@ -42,6 +45,7 @@ export const View: React.FC<IProps> = props => {
         name="phone"
         placeholder="Enter phone"
         value={phone}
+        maxLength={255}
         onChange={onChange('phone')}
       />
 
@@ -51,6 +55,7 @@ export const View: React.FC<IProps> = props => {
         name="address"
         placeholder="Enter address"
         value={address}
+        maxLength={255}
         onChange={onChange('address')}
       />
       <Input
@@ -59,20 +64,13 @@ export const View: React.FC<IProps> = props => {
         name="company"
         placeholder="Enter company"
         value={company}
+        maxLength={255}
         onChange={onChange('company')}
       />
 
       <div className={s.buttons}>
-        {hasChanged && (
-          <input className={s.cancel} type="reset" value="Cancel" onClick={onCancel} />
-        )}
-        <input
-          className={s.save}
-          type="submit"
-          value="Save"
-          onClick={onSave}
-          disabled={!hasChanged}
-        />
+        {hasChanged && <input className={s.cancel} type="reset" value="Cancel" />}
+        <input className={s.save} type="submit" value="Save" disabled={!hasChanged} />
       </div>
     </form>
   );
