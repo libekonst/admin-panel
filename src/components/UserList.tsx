@@ -1,16 +1,6 @@
 import React from 'react';
 import '../ListTile.scss';
-
-interface IUser {
-  // Properties useful to the list
-  id: string;
-  name: string;
-  email?: string;
-  photo?: string;
-
-  // Anything else that is not of interest to the list
-  [key: string]: any;
-}
+import { IUser } from '../interfaces/IUser';
 
 interface IProps {
   users: IUser[];
@@ -30,6 +20,7 @@ export const UserList: React.FC<IProps> = props => {
             selected === user.id ? 'list-tile--selected' : 'list-tile--with-hover'
           }`}
           onClick={onSelectUser(user.id)}
+          title={user.name}
         >
           <div className="list-tile__avatar">
             <img

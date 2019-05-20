@@ -4,15 +4,15 @@ import { Input } from '../input';
 import s from './UserForm.module.scss';
 
 interface IProps {
-  user: IUSerInputs;
-  onChange: (name: keyof IUSerInputs) => (e: any) => void;
+  inputs: IUSerInputs;
   hasChanged: boolean;
+  onChange: (name: keyof IUSerInputs) => (e: any) => void;
   onCancel: (e: React.FormEvent<HTMLFormElement>) => void;
   onSave: (e: React.FormEvent<HTMLFormElement>) => void;
 }
 export const View: React.FC<IProps> = props => {
   const {
-    user: { name, email, phone, address, company },
+    inputs: { name, email, phone, address, company },
     onChange,
     hasChanged,
     onCancel,
@@ -69,8 +69,16 @@ export const View: React.FC<IProps> = props => {
       />
 
       <div className={s.buttons}>
-        {hasChanged && <input className={s.cancel} type="reset" value="Cancel" />}
-        <input className={s.save} type="submit" value="Save" disabled={!hasChanged} />
+        {hasChanged && (
+          <input className={s.cancel} type="reset" value="Cancel" title="Cancel" />
+        )}
+        <input
+          className={s.save}
+          type="submit"
+          value="Save"
+          title="Save changes"
+          disabled={!hasChanged}
+        />
       </div>
     </form>
   );

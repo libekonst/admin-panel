@@ -27,33 +27,12 @@ class App extends React.Component<{}, IState> {
     }));
   };
 
-  getUserInputs = (): IUSerInputs => {
-    const user = this.state.users.find(u => u.id === this.state.selected);
-    if (!user)
-      return {
-        name: '',
-        email: '',
-        phone: '',
-        address: '',
-        company: '',
-      };
-
-    return {
-      name: user.name,
-      email: user.email,
-      phone: user.phone,
-      address: user.address,
-      company: user.company,
-    };
-  };
-
   render() {
     return (
       <View
         users={this.state.users}
         onSelectUser={this.handleSelectUser}
         selected={this.state.selected}
-        getUserInputs={this.getUserInputs}
         onSave={this.handleSave}
       />
     );
@@ -63,20 +42,21 @@ class App extends React.Component<{}, IState> {
 export default App;
 
 interface IProps {
-  onSelectUser: (id: string) => () => void;
-  selected?: string;
-  getUserInputs: () => IUSerInputs;
   users: IUser[];
+  selected?: string;
+  onSelectUser: (id: string) => () => void;
   onSave: (newData: IUSerInputs) => void;
 }
 const View: React.FC<IProps> = props => {
+  const { onSave, users, selected, onSelectUser } = props;
+
   return (
     <article className="panel">
       <section className="panel__squeezeable-section">
-        <UserList users={props.users} {...props} />
+        <UserList onSelectUser={onSelectUser} users={users} selected={selected} />
       </section>
       <section className="panel__form-section">
-        {<UserForm inputs={props.getUserInputs()} onSave={props.onSave} />}
+        <UserForm user={users.find(u => u.id === selected)} onSave={onSave} />
       </section>
     </article>
   );
