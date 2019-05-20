@@ -1,9 +1,17 @@
 @import 'variables';
 
 .panel {
+  // Position.
+  // This fixes the inconsistent scrolling and clippping behavior produced by `100vh, 100vw` on mobile browsers.
+  // E.g. Chrome Android treats 100vh as 100% of the screen's size, not the window height, causing the url bar to clip content when it is visible.
+  // https://developers.google.com/web/updates/2016/12/url-bar-resizing
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
   // Styles
-  width: 100vw;
-  height: 100vh;
   background-color: white;
   margin: auto;
 
@@ -12,6 +20,7 @@
 
   // Fullscreen on mobile, smaller on desktop. Width can be reduced up to the breakpoint's size.
   @media (min-width: $bp-desktop) {
+    position: static;
     min-width: $bp-desktop;
     width: 55vw;
     height: 55vh;
