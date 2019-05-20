@@ -10,6 +10,8 @@ interface IProps {
   onCancel: (e: React.FormEvent<HTMLFormElement>) => void;
   onSave: (e: React.FormEvent<HTMLFormElement>) => void;
 }
+
+/** A stateless function component that handles the presentation for the UserForm. */
 export const View: React.FC<IProps> = props => {
   const {
     inputs: { name, email, phone, address, company },
@@ -18,6 +20,7 @@ export const View: React.FC<IProps> = props => {
     onCancel,
     onSave,
   } = props;
+
   return (
     <form onSubmit={onSave} onReset={onCancel}>
       <Input
@@ -25,6 +28,7 @@ export const View: React.FC<IProps> = props => {
         type="text"
         name="name"
         placeholder="Enter name"
+        title="Enter name"
         value={name}
         required
         maxLength={255}
@@ -35,6 +39,7 @@ export const View: React.FC<IProps> = props => {
         type="email"
         name="email"
         placeholder="Enter email"
+        title="Enter email"
         value={email}
         maxLength={255}
         onChange={onChange('email')}
@@ -44,8 +49,10 @@ export const View: React.FC<IProps> = props => {
         type="tel"
         name="phone"
         placeholder="Enter phone"
+        title="Enter phone"
         value={phone}
         maxLength={255}
+        pattern="^[^a-zA-Z]*$"
         onChange={onChange('phone')}
       />
 
@@ -54,6 +61,7 @@ export const View: React.FC<IProps> = props => {
         type="text"
         name="address"
         placeholder="Enter address"
+        title="Enter address"
         value={address}
         maxLength={255}
         onChange={onChange('address')}
@@ -63,6 +71,7 @@ export const View: React.FC<IProps> = props => {
         type="text"
         name="company"
         placeholder="Enter company"
+        title="Enter company"
         value={company}
         maxLength={255}
         onChange={onChange('company')}
