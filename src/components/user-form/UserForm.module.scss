@@ -29,13 +29,6 @@
   }
 }
 
-// .save--disabled {
-//   @include button;
-
-//   background-color: $primary;
-//   cursor: auto;
-// }
-
 .save {
   @include button;
 
@@ -48,11 +41,11 @@
     background-color: lighten($primary, 30%);
   }
 
-  &:active {
-    background-color: darken($primary, 5%);
-  }
-
   &:not(:disabled):hover {
     background-color: lighten($primary, 5%);
+  }
+
+  &:not(:disabled):active {
+    background-color: darken($primary, 5%);
   }
 }
