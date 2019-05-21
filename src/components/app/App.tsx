@@ -8,17 +8,18 @@ interface IState {
   selected?: string;
   users: IUser[];
 }
-
+interface IProps {
+  users?: IUser[];
+}
 /**
  * A container component holidng the App's state.
  * Handles selecting a user and provides a save user service.
  */
-class App extends React.Component<{}, IState> {
+class App extends React.Component<IProps, IState> {
   state: IState = {
     selected: undefined,
-    users: USERS,
+    users: this.props.users || USERS,
   };
-
   /**
    * Changes the selected user id.
    * Provides a way to select a user and render based on the selected user.

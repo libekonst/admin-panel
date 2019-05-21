@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The <App/> component should provide a method to select a user and re-render the View with a selected user 1`] = `
+<View
+  onSave={[Function]}
+  onSelectUser={[Function]}
+  users={
+    Array [
+      Object {
+        "address": "958 Brevoort Place, Ona, Maine, 2433",
+        "company": "ZOLAREX",
+        "email": "bates.washington@zolarex.io",
+        "id": "5c093af1c6ee9117a581c7d6",
+        "name": "Bates Washington",
+        "phone": "+1 (915) 447-2207",
+        "photo": "https://randomuser.me/api/portraits/men/40.jpg",
+      },
+      Object {
+        "address": "120 Cedar Street, Mansfield, Kentucky, 8890",
+        "company": "VIAGRAND",
+        "email": "mollie.oneill@viagrand.biz",
+        "id": "5c093af1aeca1bb00607fb2a",
+        "name": "Mollie Oneill",
+        "phone": "+1 (852) 535-3880",
+        "photo": "https://randomuser.me/api/portraits/men/1.jpg",
+      },
+    ]
+  }
+/>
+`;
+
+exports[`The <App/> component should provide a method to select a user and re-render the View with a selected user 2`] = `
+<View
+  onSave={[Function]}
+  onSelectUser={[Function]}
+  selected="5c093af1c6ee9117a581c7d6"
+  users={
+    Array [
+      Object {
+        "address": "958 Brevoort Place, Ona, Maine, 2433",
+        "company": "ZOLAREX",
+        "email": "bates.washington@zolarex.io",
+        "id": "5c093af1c6ee9117a581c7d6",
+        "name": "Bates Washington",
+        "phone": "+1 (915) 447-2207",
+        "photo": "https://randomuser.me/api/portraits/men/40.jpg",
+      },
+      Object {
+        "address": "120 Cedar Street, Mansfield, Kentucky, 8890",
+        "company": "VIAGRAND",
+        "email": "mollie.oneill@viagrand.biz",
+        "id": "5c093af1aeca1bb00607fb2a",
+        "name": "Mollie Oneill",
+        "phone": "+1 (852) 535-3880",
+        "photo": "https://randomuser.me/api/portraits/men/1.jpg",
+      },
+    ]
+  }
+/>
+`;
+
+exports[`The <App/> component should render only the View component 1`] = `
+<View
+  onSave={[Function]}
+  onSelectUser={[Function]}
+  users={
+    Array [
+      Object {
+        "address": "958 Brevoort Place, Ona, Maine, 2433",
+        "company": "ZOLAREX",
+        "email": "bates.washington@zolarex.io",
+        "id": "5c093af1c6ee9117a581c7d6",
+        "name": "Bates Washington",
+        "phone": "+1 (915) 447-2207",
+        "photo": "https://randomuser.me/api/portraits/men/40.jpg",
+      },
+      Object {
+        "address": "120 Cedar Street, Mansfield, Kentucky, 8890",
+        "company": "VIAGRAND",
+        "email": "mollie.oneill@viagrand.biz",
+        "id": "5c093af1aeca1bb00607fb2a",
+        "name": "Mollie Oneill",
+        "phone": "+1 (852) 535-3880",
+        "photo": "https://randomuser.me/api/portraits/men/1.jpg",
+      },
+    ]
+  }
+/>
+`;
