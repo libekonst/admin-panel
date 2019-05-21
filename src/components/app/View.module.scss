@@ -41,5 +41,9 @@
 .form-section {
   flex: 1;
   overflow: auto;
-  padding: 2rem;
+  padding: 1rem;
+
+  @media (min-width: $bp-desktop) {
+    padding: 2rem;
+  }
 }
