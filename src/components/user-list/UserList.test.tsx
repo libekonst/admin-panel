@@ -63,8 +63,7 @@ describe('The <UserList /> component', () => {
     const component = shallow(<UserList users={users} onSelectUser={mockSelectUser} />);
     const node = component.findWhere(node => node.key() === users[0].id);
 
-    // Assert that the event handler is called properly.
-    expect(mockClickUser).not.toHaveBeenCalled();
+    // Assert that the event handler is properly called on click.
     node.simulate('click');
     expect(mockClickUser).toHaveBeenCalled();
   });
