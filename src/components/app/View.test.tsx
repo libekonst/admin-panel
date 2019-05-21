@@ -42,7 +42,7 @@ describe("The app's <View/> component", () => {
         users={mockUsers}
         onSave={mockSave}
         onSelectUser={mockSelect}
-        selected={mockUsers[0].id}
+        selectedID={mockUsers[0].id}
       />,
     );
     expect(component).toMatchSnapshot();

@@ -33,7 +33,7 @@ exports[`The <App/> component should provide a method to select a user and re-re
 <View
   onSave={[Function]}
   onSelectUser={[Function]}
-  selected="5c093af1c6ee9117a581c7d6"
+  selectedID="5c093af1c6ee9117a581c7d6"
   users={
     Array [
       Object {

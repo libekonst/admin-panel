@@ -9,7 +9,7 @@ exports[`The app's <View/> component should find a user by the selected prop and
   >
     <UserList
       onSelectUser={[MockFunction]}
-      selected="5c093af1c6ee9117a581c7d6"
+      selectedID="5c093af1c6ee9117a581c7d6"
       users={
         Array [
           Object {

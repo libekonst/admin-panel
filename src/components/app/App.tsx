@@ -5,7 +5,7 @@ import { IUser } from '../../interfaces/IUser';
 import { View } from './View';
 
 interface IState {
-  selected?: string;
+  selectedID?: string;
   users: IUser[];
 }
 interface IProps {
@@ -17,20 +17,20 @@ interface IProps {
  */
 class App extends React.Component<IProps, IState> {
   state: IState = {
-    selected: undefined,
+    selectedID: undefined,
     users: this.props.users || USERS,
   };
   /**
    * Changes the selected user id.
    * Provides a way to select a user and render based on the selected user.
    */
-  handleSelectUser = (id: string) => () => this.setState({ selected: id });
+  handleSelectUser = (id: string) => () => this.setState({ selectedID: id });
 
   /** Saves changes made to a user to the App's state. */
   handleSave = (newData: IUSerInputs) => {
     this.setState(prev => ({
       users: prev.users.map(user =>
-        user.id === prev.selected ? { ...user, ...newData } : user,
+        user.id === prev.selectedID ? { ...user, ...newData } : user,
       ),
     }));
   };
@@ -40,7 +40,7 @@ class App extends React.Component<IProps, IState> {
       <View
         users={this.state.users}
         onSelectUser={this.handleSelectUser}
-        selected={this.state.selected}
+        selectedID={this.state.selectedID}
         onSave={this.handleSave}
       />
     );
