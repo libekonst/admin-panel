@@ -1,0 +1,139 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The user form's <View /> component renders only the submit button as disabled when no input has changed 1`] = `
+<form
+  onReset={[MockFunction]}
+  onSubmit={[MockFunction]}
+>
+  <Input
+    label="Name"
+    maxLength={255}
+    name="name"
+    placeholder="Enter name"
+    required={true}
+    title="Enter name"
+    type="text"
+    value=""
+  />
+  <Input
+    label="Email address"
+    maxLength={255}
+    name="email"
+    placeholder="Enter email"
+    title="Enter email"
+    type="email"
+    value=""
+  />
+  <Input
+    label="Phone"
+    maxLength={255}
+    name="phone"
+    pattern="^[^a-zA-Z]*$"
+    placeholder="Enter phone"
+    title="Enter phone"
+    type="tel"
+    value=""
+  />
+  <Input
+    label="Address"
+    maxLength={255}
+    name="address"
+    placeholder="Enter address"
+    title="Enter address"
+    type="text"
+    value=""
+  />
+  <Input
+    label="Company"
+    maxLength={255}
+    name="company"
+    placeholder="Enter company"
+    title="Enter company"
+    type="text"
+    value=""
+  />
+  <div
+    className="buttons"
+  >
+    <input
+      className="save"
+      disabled={true}
+      title="Save changes"
+      type="submit"
+      value="Save"
+    />
+  </div>
+</form>
+`;
+
+exports[`The user form's <View /> component renders the form's view with both buttons enabled when hasChanged is true 1`] = `
+<form
+  onReset={[MockFunction]}
+  onSubmit={[MockFunction]}
+>
+  <Input
+    label="Name"
+    maxLength={255}
+    name="name"
+    placeholder="Enter name"
+    required={true}
+    title="Enter name"
+    type="text"
+    value=""
+  />
+  <Input
+    label="Email address"
+    maxLength={255}
+    name="email"
+    placeholder="Enter email"
+    title="Enter email"
+    type="email"
+    value=""
+  />
+  <Input
+    label="Phone"
+    maxLength={255}
+    name="phone"
+    pattern="^[^a-zA-Z]*$"
+    placeholder="Enter phone"
+    title="Enter phone"
+    type="tel"
+    value=""
+  />
+  <Input
+    label="Address"
+    maxLength={255}
+    name="address"
+    placeholder="Enter address"
+    title="Enter address"
+    type="text"
+    value=""
+  />
+  <Input
+    label="Company"
+    maxLength={255}
+    name="company"
+    placeholder="Enter company"
+    title="Enter company"
+    type="text"
+    value=""
+  />
+  <div
+    className="buttons"
+  >
+    <input
+      className="cancel"
+      title="Cancel"
+      type="reset"
+      value="Cancel"
+    />
+    <input
+      className="save"
+      disabled={false}
+      title="Save changes"
+      type="submit"
+      value="Save"
+    />
+  </div>
+</form>
+`;
