@@ -1,0 +1,99 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The app's <View/> component should find a user by the selected prop and pass it to <UserForm /> 1`] = `
+<article
+  className="panel"
+>
+  <section
+    className="squeezeable-section"
+  >
+    <UserList
+      onSelectUser={[MockFunction]}
+      selected="5c093af1c6ee9117a581c7d6"
+      users={
+        Array [
+          Object {
+            "address": "958 Brevoort Place, Ona, Maine, 2433",
+            "company": "ZOLAREX",
+            "email": "bates.washington@zolarex.io",
+            "id": "5c093af1c6ee9117a581c7d6",
+            "name": "Bates Washington",
+            "phone": "+1 (915) 447-2207",
+            "photo": "https://randomuser.me/api/portraits/men/40.jpg",
+          },
+          Object {
+            "address": "120 Cedar Street, Mansfield, Kentucky, 8890",
+            "company": "VIAGRAND",
+            "email": "mollie.oneill@viagrand.biz",
+            "id": "5c093af1aeca1bb00607fb2a",
+            "name": "Mollie Oneill",
+            "phone": "+1 (852) 535-3880",
+            "photo": "https://randomuser.me/api/portraits/men/1.jpg",
+          },
+        ]
+      }
+    />
+  </section>
+  <section
+    className="form-section"
+  >
+    <UserForm
+      onSave={[MockFunction]}
+      user={
+        Object {
+          "address": "958 Brevoort Place, Ona, Maine, 2433",
+          "company": "ZOLAREX",
+          "email": "bates.washington@zolarex.io",
+          "id": "5c093af1c6ee9117a581c7d6",
+          "name": "Bates Washington",
+          "phone": "+1 (915) 447-2207",
+          "photo": "https://randomuser.me/api/portraits/men/40.jpg",
+        }
+      }
+    />
+  </section>
+</article>
+`;
+
+exports[`The app's <View/> component should render the App's view 1`] = `
+<article
+  className="panel"
+>
+  <section
+    className="squeezeable-section"
+  >
+    <UserList
+      onSelectUser={[MockFunction]}
+      users={
+        Array [
+          Object {
+            "address": "958 Brevoort Place, Ona, Maine, 2433",
+            "company": "ZOLAREX",
+            "email": "bates.washington@zolarex.io",
+            "id": "5c093af1c6ee9117a581c7d6",
+            "name": "Bates Washington",
+            "phone": "+1 (915) 447-2207",
+            "photo": "https://randomuser.me/api/portraits/men/40.jpg",
+          },
+          Object {
+            "address": "120 Cedar Street, Mansfield, Kentucky, 8890",
+            "company": "VIAGRAND",
+            "email": "mollie.oneill@viagrand.biz",
+            "id": "5c093af1aeca1bb00607fb2a",
+            "name": "Mollie Oneill",
+            "phone": "+1 (852) 535-3880",
+            "photo": "https://randomuser.me/api/portraits/men/1.jpg",
+          },
+        ]
+      }
+    />
+  </section>
+  <section
+    className="form-section"
+  >
+    <UserForm
+      onSave={[MockFunction]}
+    />
+  </section>
+</article>
+`;
