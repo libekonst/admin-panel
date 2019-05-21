@@ -24,10 +24,10 @@ describe("The app's <View/> component", () => {
       address: '120 Cedar Street, Mansfield, Kentucky, 8890',
     },
   ];
-  const mockSave = jest.fn();
-  const mockSelect = jest.fn();
 
   it("should render the App's view and pass undedfined to <UserForm />", () => {
+    const mockSave = jest.fn();
+    const mockSelect = jest.fn();
     const component = shallow(
       <View users={mockUsers} onSave={mockSave} onSelectUser={mockSelect} />,
     );
@@ -37,6 +37,8 @@ describe("The app's <View/> component", () => {
   });
 
   it('should find a user by the selected prop and pass it to <UserForm />', () => {
+    const mockSave = jest.fn();
+    const mockSelect = jest.fn();
     const component = shallow(
       <View
         users={mockUsers}
