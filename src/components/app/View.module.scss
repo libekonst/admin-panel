@@ -1,4 +1,4 @@
-@import 'variables';
+@import '../../variables';
 
 .panel {
   // Position.
@@ -26,21 +26,21 @@
     height: 55vh;
     box-shadow: 0 0 5px 1px lightgray;
   }
+}
 
-  &__form-section {
+.squeezeable-section {
+  // This always shows a scrollbar, even if not overflowing.
+  // Shoulde use 'auto', but it causes mozilla to push content. Chrome is fine with both.
+  // Maybe use ref to dynamically add overflow-y: scroll.
+  overflow-y: scroll;
+  // Take up min space on mobile and grow on desktop
+  @media (min-width: $bp-desktop) {
     flex: 1;
-    overflow: auto;
-    padding: 2rem;
   }
+}
 
-  &__squeezeable-section {
-    // This always shows a scrollbar, even if not overflowing.
-    // Shoulde use 'auto', but it causes mozilla to push content. Chrome is fine with both.
-    // Maybe use ref to dynamically add overflow-y: scroll.
-    overflow-y: scroll;
-    // Take up min space on mobile and grow on desktop
-    @media (min-width: $bp-desktop) {
-      flex: 1;
-    }
-  }
+.form-section {
+  flex: 1;
+  overflow: auto;
+  padding: 2rem;
 }

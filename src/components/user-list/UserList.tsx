@@ -1,6 +1,6 @@
 import React from 'react';
-import '../ListTile.scss';
-import { IUser } from '../interfaces/IUser';
+import './ListTile.scss';
+import { IUser } from '../../interfaces/IUser';
 
 interface IProps {
   users: IUser[];
