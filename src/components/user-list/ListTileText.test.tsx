@@ -7,12 +7,16 @@ describe('The <ListTileText /> component', () => {
     const component = shallow(<ListTileText primary="Primary" secondary="Secondary" />);
 
     expect(component).toMatchSnapshot();
+    expect(component.find('div').children().length).toBe(2);
   });
+
   it('renders only the primary text, if the secondary is omitted', () => {
     const component = shallow(<ListTileText primary="Primary" />);
 
     expect(component).toMatchSnapshot();
+    expect(component.find('div').children().length).toBe(1);
   });
+
   it('applies the selected className modifier to each child if the selected prop is true', () => {
     const component = shallow(
       <ListTileText primary="Primary" secondary="Secondary" selected />,

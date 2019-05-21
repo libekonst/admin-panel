@@ -30,17 +30,19 @@ describe('The <UserList /> component', () => {
   // Assert that an event handler is generated for each list tile.
   afterEach(() => expect(mockSelectUser).toHaveBeenCalledWith(users[0].id));
 
-  // Snapshots
+  // Snapshots and proper children length
   it('maps through an array of users and renders a <ListTile /> for each user', () => {
     const component = shallow(<UserList users={users} onSelectUser={mockSelectUser} />);
 
     expect(component).toMatchSnapshot();
+    expect(component.find('ul').children().length).toBe(users.length);
   });
 
   it('renders an empty list if the users array is empty', () => {
     const component = shallow(<UserList users={[]} onSelectUser={mockSelectUser} />);
 
     expect(component).toMatchSnapshot();
+    expect(component.find('ul').children().length).toBe(0);
   });
 
   // Event

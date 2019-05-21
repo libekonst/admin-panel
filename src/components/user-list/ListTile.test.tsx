@@ -18,8 +18,9 @@ describe('The <ListTile /> component', () => {
     expect(component).toMatchSnapshot();
   });
 
-  it('passes the selected prop to its ListTileText child', () => {
+  it('passes the selected prop to its ListTileText child, if true', () => {
     const component = shallow(<ListTile user={user} selected />);
     expect(component).toMatchSnapshot();
+    expect(component.find('ListTileText').prop('selected')).toBe(true);
   });
 });

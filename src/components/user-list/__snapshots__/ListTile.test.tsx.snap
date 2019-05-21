@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`The <ListTile /> component passes the selected prop to its ListTileText child 1`] = `
+exports[`The <ListTile /> component passes the selected prop to its ListTileText child, if true 1`] = `
 <li
   className="list-tile list-tile--selected"
 >
