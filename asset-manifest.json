@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/admin-panel/static/css/main.2ebf6a36.chunk.css",
+    "main.js": "/admin-panel/static/js/main.00d8f3f7.chunk.js",
+    "main.js.map": "/admin-panel/static/js/main.00d8f3f7.chunk.js.map",
+    "runtime~main.js": "/admin-panel/static/js/runtime~main.cb34ca52.js",
+    "runtime~main.js.map": "/admin-panel/static/js/runtime~main.cb34ca52.js.map",
+    "static/js/2.d92c5276.chunk.js": "/admin-panel/static/js/2.d92c5276.chunk.js",
+    "static/js/2.d92c5276.chunk.js.map": "/admin-panel/static/js/2.d92c5276.chunk.js.map",
+    "index.html": "/admin-panel/index.html",
+    "precache-manifest.ca1d88d00e996b02dd0097e8e6bcd3d7.js": "/admin-panel/precache-manifest.ca1d88d00e996b02dd0097e8e6bcd3d7.js",
+    "service-worker.js": "/admin-panel/service-worker.js",
+    "static/css/main.2ebf6a36.chunk.css.map": "/admin-panel/static/css/main.2ebf6a36.chunk.css.map"
+  }
+}
