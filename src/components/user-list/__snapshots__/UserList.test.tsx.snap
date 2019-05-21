@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The <UserList /> component maps through an array of users and renders a <ListTile /> for each user 1`] = `
+<ul>
+  <ListTile
+    key="5c093af1c6ee9117a581c7d6"
+    onClick={[MockFunction]}
+    selected={false}
+    title="Bates Washington"
+    user={
+      Object {
+        "address": "958 Brevoort Place, Ona, Maine, 2433",
+        "company": "ZOLAREX",
+        "email": "bates.washington@zolarex.io",
+        "id": "5c093af1c6ee9117a581c7d6",
+        "name": "Bates Washington",
+        "phone": "+1 (915) 447-2207",
+        "photo": "https://randomuser.me/api/portraits/men/40.jpg",
+      }
+    }
+  />
+  <ListTile
+    key="5c093af1aeca1bb00607fb2a"
+    onClick={[MockFunction]}
+    selected={false}
+    title="Mollie Oneill"
+    user={
+      Object {
+        "address": "120 Cedar Street, Mansfield, Kentucky, 8890",
+        "company": "VIAGRAND",
+        "email": "mollie.oneill@viagrand.biz",
+        "id": "5c093af1aeca1bb00607fb2a",
+        "name": "Mollie Oneill",
+        "phone": "+1 (852) 535-3880",
+        "photo": "https://randomuser.me/api/portraits/men/1.jpg",
+      }
+    }
+  />
+</ul>
+`;
+
+exports[`The <UserList /> component renders an empty list if the users array is empty 1`] = `<ul />`;
