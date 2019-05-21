@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The <ListTileText /> component applies the selected className modifier to each child if the selected prop is true 1`] = `
+<div
+  className="text-wrapper"
+>
+  <p
+    className="primary primary--selected"
+  >
+    Primary
+  </p>
+  <p
+    className="secondary secondary--selected"
+  >
+    Secondary
+  </p>
+</div>
+`;
+
+exports[`The <ListTileText /> component renders only the primary text, if the secondary is omitted 1`] = `
+<div
+  className="text-wrapper"
+>
+  <p
+    className="primary"
+  >
+    Primary
+  </p>
+</div>
+`;
+
+exports[`The <ListTileText /> component renders primary and secondary texts, if both are provided 1`] = `
+<div
+  className="text-wrapper"
+>
+  <p
+    className="primary"
+  >
+    Primary
+  </p>
+  <p
+    className="secondary"
+  >
+    Secondary
+  </p>
+</div>
+`;
