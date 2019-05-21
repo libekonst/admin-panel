@@ -8,6 +8,7 @@ interface IProps {
   selected?: string;
 }
 
+/** A stateless component that maps through and array of users an renders a list tile for each user */
 export const UserList: React.FC<IProps> = props => {
   const { users, selected, onSelectUser } = props;
 

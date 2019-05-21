@@ -1,20 +1,24 @@
 @import '../../variables';
 
-.details {
-  flex: 1;
+// List tile details. Collapses on small screens.
+.text-wrapper {
   display: none;
-  margin-left: $list-tile-padding-x;
 
   // Show element only on desktop
   @media (min-width: $bp-desktop) {
-    // Flex position
+    // Flex layout
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+
+    // Styles
+    flex: 1;
+    margin-left: $list-tile-padding-x;
   }
 }
 
+// Primary text styles.
 .primary {
   font-size: 0.95rem;
   font-weight: 600;
@@ -25,6 +29,7 @@
   }
 }
 
+// Secondary text styles.
 .secondary {
   font-size: 0.9rem;
   color: darken(white, 40%);

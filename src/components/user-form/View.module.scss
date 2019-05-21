@@ -1,5 +1,6 @@
 @import '../../variables';
 
+// Form actions wrapper
 .buttons {
   display: flex;
   justify-content: flex-end;
@@ -15,6 +16,7 @@
   transition: background-color 0.1s ease-out;
 }
 
+// Form reset
 .cancel {
   @include button;
 
@@ -29,6 +31,7 @@
   }
 }
 
+// Form submit
 .save {
   @include button;
 

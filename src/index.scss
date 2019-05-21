@@ -2,11 +2,11 @@
 @import './normalize';
 
 body {
+  // Initial CRA fonts. Sans-serif type fallback matches the mockup's font type.
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* min-height: 100vh; */
 }
 
 *,

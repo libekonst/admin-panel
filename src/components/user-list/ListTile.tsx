@@ -8,6 +8,8 @@ interface IProps extends React.HTMLProps<HTMLLIElement> {
   user: IUser;
   selected: boolean;
 }
+
+/** A function component that renders a user list tile. */
 export const ListTile: React.FC<IProps> = props => {
   const {
     user: { name, email, photo },

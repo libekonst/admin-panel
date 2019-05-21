@@ -8,6 +8,7 @@ interface IProps {
   selected?: boolean;
 }
 
+/** A function component that renders a user's details in a list tile. Collapses on mobile. */
 export const ListTileText: React.FC<IProps> = props => {
   const { primary, secondary, selected } = props;
 
@@ -16,7 +17,7 @@ export const ListTileText: React.FC<IProps> = props => {
   const secondaryClass = cn(s['secondary'], { [s['secondary--selected']]: selected });
 
   return (
-    <div className={s.details}>
+    <div className={s['text-wrapper']}>
       <p className={primaryClass}>{primary}</p>
       {secondary && <p className={secondaryClass}>{secondary}</p>}
     </div>

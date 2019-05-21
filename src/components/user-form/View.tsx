@@ -1,7 +1,7 @@
 import React from 'react';
 import { IUSerInputs } from '../../interfaces/IUserInputs';
 import { Input } from '../input';
-import s from './UserForm.module.scss';
+import s from './View.module.scss';
 
 interface IProps {
   inputs: IUSerInputs;

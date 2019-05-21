@@ -1,13 +1,15 @@
 import React from 'react';
 import s from './Input.module.scss';
 
-interface IProps {
+interface IProps extends React.HTMLProps<HTMLInputElement> {
   label?: string;
 }
 
-type Props = IProps & React.HTMLProps<HTMLInputElement>;
-
-export const Input: React.FC<Props> = props => {
+/**
+ * A function component that renders a styled <input /> element
+ * and an accompanying <label />, if the label prop is not omitted.
+ */
+export const Input: React.FC<IProps> = props => {
   const { label, ...rest } = props;
   return (
     <>
