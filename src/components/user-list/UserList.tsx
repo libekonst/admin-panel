@@ -16,30 +16,38 @@ export const UserList: React.FC<IProps> = props => {
       {users.map(user => (
         <li
           key={user.id}
-          className={`list-tile ${
-            selected === user.id ? 'list-tile--selected' : 'list-tile--with-hover'
-          }`}
+          className={
+            selected === user.id
+              ? 'list-tile list-tile--selected'
+              : 'list-tile list-tile--with-hover'
+          }
           onClick={onSelectUser(user.id)}
           title={user.name}
         >
-          <div className="list-tile__avatar">
+          <div className="avatar">
             <img
-              className="list-tile__avatar__image"
+              className="avatar__image"
               src={user.photo}
               alt={`${user.name}'s avatar`}
             />
           </div>
-          <div className="list-tile__details">
+          <div className="details">
             <p
-              className={`list-tile__details__name ${selected === user.id &&
-                'list-tile__details__name--selected'}`}
+              className={
+                selected === user.id
+                  ? 'details__name details__name--selected'
+                  : 'details__name'
+              }
             >
               {user.name}
             </p>
             {user.email && (
               <p
-                className={`list-tile__details__email ${selected === user.id &&
-                  'list-tile__details__email--selected'}`}
+                className={
+                  selected === user.id
+                    ? 'details__email details__email--selected'
+                    : 'details__email'
+                }
               >
                 {user.email}
               </p>
