@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The <ListTile /> component passes the selected prop to its ListTileText child 1`] = `
+<li
+  className="list-tile list-tile--selected"
+>
+  <div
+    className="avatar"
+  >
+    <img
+      alt="Bates Washington's avatar"
+      className="avatar__image"
+      src="https://randomuser.me/api/portraits/men/40.jpg"
+    />
+  </div>
+  <ListTileText
+    primary="Bates Washington"
+    secondary="bates.washington@zolarex.io"
+    selected={true}
+  />
+</li>
+`;
+
+exports[`The <ListTile /> component renders a <li /> element that contains a user's avatar and details 1`] = `
+<li
+  className="list-tile"
+>
+  <div
+    className="avatar"
+  >
+    <img
+      alt="Bates Washington's avatar"
+      className="avatar__image"
+      src="https://randomuser.me/api/portraits/men/40.jpg"
+    />
+  </div>
+  <ListTileText
+    primary="Bates Washington"
+    secondary="bates.washington@zolarex.io"
+  />
+</li>
+`;

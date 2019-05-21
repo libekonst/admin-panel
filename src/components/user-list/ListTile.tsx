@@ -6,7 +6,7 @@ import s from './ListTile.module.scss';
 
 interface IProps extends React.HTMLProps<HTMLLIElement> {
   user: IUser;
-  selected: boolean;
+  selected?: boolean;
 }
 
 /** A function component that renders a user list tile. */
