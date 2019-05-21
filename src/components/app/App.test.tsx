@@ -69,7 +69,7 @@ describe('The <App/> component', () => {
     const updated = users.map(u => (u.id === id ? { ...u, ...inputs } : u));
 
     // Select a user.
-    instance.setState({ selectedID: id });
+    component.setState({ selectedID: id });
     expect(component.state().selectedID).toBe(id);
 
     // Call the handleSave method and update the user's properties.
@@ -93,7 +93,7 @@ describe('The <App/> component', () => {
     expect(component.state().users).toEqual(users);
 
     // Set selected id.
-    instance.setState({ selectedID: id });
+    component.setState({ selectedID: id });
     expect(component.state().selectedID).toBe(id);
 
     // Call the handleSave method.
