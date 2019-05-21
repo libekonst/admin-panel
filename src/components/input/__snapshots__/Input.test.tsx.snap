@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The <Input /> component properly passes any props other than label to the rendered input element 1`] = `
+<Fragment>
+  <label
+    className="label"
+  >
+    Label
+  </label>
+  <input
+    className="I have replaced the previous className"
+  />
+</Fragment>
+`;
+
+exports[`The <Input /> component renders an input and a label paired to the input based on its name prop 1`] = `
+<Fragment>
+  <label
+    className="label"
+    htmlFor="myInput"
+  >
+    This is a label paired to myInput
+  </label>
+  <input
+    className="input"
+    name="myInput"
+  />
+</Fragment>
+`;
+
+exports[`The <Input /> component renders only an input element if the label prop is omitted 1`] = `
+<Fragment>
+  <input
+    className="input"
+  />
+</Fragment>
+`;
