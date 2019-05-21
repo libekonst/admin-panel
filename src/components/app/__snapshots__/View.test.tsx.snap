@@ -55,7 +55,7 @@ exports[`The app's <View/> component should find a user by the selected prop and
 </article>
 `;
 
-exports[`The app's <View/> component should render the App's view 1`] = `
+exports[`The app's <View/> component should render the App's view and pass undedfined to <UserForm /> 1`] = `
 <article
   className="panel"
 >

@@ -27,12 +27,13 @@ describe("The app's <View/> component", () => {
   const mockSave = jest.fn();
   const mockSelect = jest.fn();
 
-  it("should render the App's view", () => {
+  it("should render the App's view and pass undedfined to <UserForm />", () => {
     const component = shallow(
       <View users={mockUsers} onSave={mockSave} onSelectUser={mockSelect} />,
     );
 
     expect(component).toMatchSnapshot();
+    expect(component.find('UserForm').prop('user')).toBeUndefined();
   });
 
   it('should find a user by the selected prop and pass it to <UserForm />', () => {
@@ -45,5 +46,6 @@ describe("The app's <View/> component", () => {
       />,
     );
     expect(component).toMatchSnapshot();
+    expect(component.find('UserForm').prop('user')).toEqual(mockUsers[0]);
   });
 });
