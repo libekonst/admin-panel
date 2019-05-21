@@ -24,29 +24,42 @@ describe('The <UserList /> component', () => {
       address: '120 Cedar Street, Mansfield, Kentucky, 8890',
     },
   ];
-  const mockClickUser = jest.fn(() => null);
-  const mockSelectUser = jest.fn((id: string) => mockClickUser);
 
-  // Assert that an event handler is generated for each list tile.
-  afterEach(() => expect(mockSelectUser).toHaveBeenCalledWith(users[0].id));
-
-  // Snapshots and proper children length
+  // Test snapshots, event handlers registered.
   it('maps through an array of users and renders a <ListTile /> for each user', () => {
+    const mockClickUser = jest.fn(() => null); // An event handler for a ListItem.
+    const mockSelectUser = jest.fn((id: string) => mockClickUser); // Event handler generator.
     const component = shallow(<UserList users={users} onSelectUser={mockSelectUser} />);
 
     expect(component).toMatchSnapshot();
+
+    // Assert that a ListItem is rendered for each user.
     expect(component.find('ul').children().length).toBe(users.length);
+
+    // Assert that an event handler is registered for each user.
+    expect(mockSelectUser).toBeCalledTimes(2);
+    expect(mockSelectUser).toHaveBeenCalledWith(users[0].id);
+    expect(mockSelectUser).toHaveBeenCalledWith(users[1].id);
+    expect(mockClickUser).not.toHaveBeenCalled();
   });
 
   it('renders an empty list if the users array is empty', () => {
+    const mockSelectUser = jest.fn((id: string) => () => null); // Event handler generator.
     const component = shallow(<UserList users={[]} onSelectUser={mockSelectUser} />);
 
     expect(component).toMatchSnapshot();
+
+    // Assert no ListItems are rendered.
     expect(component.find('ul').children().length).toBe(0);
+
+    // Assert no event handlers have been registered.
+    expect(mockSelectUser).not.toHaveBeenCalled();
   });
 
-  // Event
+  // Test event handler.
   it('passes an event handler on each child that can be called on click', () => {
+    const mockClickUser = jest.fn(() => null); // An event handler for a ListItem.
+    const mockSelectUser = jest.fn((id: string) => mockClickUser); // Event handler generator.
     const component = shallow(<UserList users={users} onSelectUser={mockSelectUser} />);
     const node = component.findWhere(node => node.key() === users[0].id);
 
