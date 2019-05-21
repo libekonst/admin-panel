@@ -52,7 +52,7 @@ describe("getUserInputs returns an object with a IUser's editable properties ", 
       address: '',
     };
 
-    // @ts-ignore
+    // @ts-ignore -> remove properties
     expect(getUserInputs(user)).toEqual(editable);
   });
 });
